@@ -18,4 +18,7 @@ class TestGame(TestCase):
         result = self.game.guess("ABC", "ABCABC")
         self.assertEqual(0, result)
 
+    def test_unmatched_length_words(self):
+        result = self.game.guess("ABC", "FE")
+        self.assertEqual(30, result)
 
