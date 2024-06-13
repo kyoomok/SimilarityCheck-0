@@ -1,13 +1,17 @@
 from unittest import TestCase
-from game import Game
+from game import *
 
 
 class TestGame(TestCase):
-    def test_game(self):
+    def setUp(self):
+        super().setUp()
         self.game = Game()
+
+    def test_game(self):
         self.assertEqual(1, 1)
 
     def test_equal_words(self):
-        self.game = Game()
         result = self.game.guess("ABC", "ABC")
-        self.assertEqual(60, result)
+        self.assertEqual(self.game.MAX_SCORE_LENGTH, result)
+
+
