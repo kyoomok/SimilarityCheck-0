@@ -14,4 +14,8 @@ class TestGame(TestCase):
         result = self.game.guess("ABC", "ABC")
         self.assertEqual(self.game.MAX_SCORE_LENGTH, result)
 
+    def test_double_length_words(self):
+        result = self.game.guess("ABC", "ABCABC")
+        self.assertEqual(0, result)
+
 
